@@ -41,7 +41,8 @@ RSpec.describe BooksController, type: :controller do
     end
 
     it 'should return http response unprocessable entity for invalid attributes' do
-      post :create, book: { name: '', author: '', isbn: '', price: '', publication: '', version: '', no_of_copies: '', library_id: '', category_id: ''  }
+      book = create(:book)
+      post :create, book: { name: '', author: '', isbn: '', price: '', publication: '', version: '', no_of_copies: '', library_id: book.library_id, category_id: book.category_id }
       response.should have_http_status(:unprocessable_entity)
     end
   end
@@ -55,19 +56,19 @@ RSpec.describe BooksController, type: :controller do
 
     it 'should return http response not found if category not found' do
       book = create(:book)
-      put :update, book: { name: book.name, author: book.author, isbn: book.isbn, price: book.price, publication: book.publication, version: book.version, no_of_copies: book.no_of_copies, library_id: book.library_id, category_id: 0 }
+      put :update, id: book.id, book: { name: book.name, author: book.author, isbn: book.isbn, price: book.price, publication: book.publication, version: book.version, no_of_copies: book.no_of_copies, library_id: book.library_id, category_id: 0 }
       response.should have_http_status(:not_found)
     end
 
     it 'should return http response not found if library not found' do
       book = create(:book)
-      put :update, book: { name: book.name, author: book.author, isbn: book.isbn, price: book.price, publication: book.publication, version: book.version, no_of_copies: book.no_of_copies, library_id: 0, category_id: book.category_id }
+      put :update, id: book.id, book: { name: book.name, author: book.author, isbn: book.isbn, price: book.price, publication: book.publication, version: book.version, no_of_copies: book.no_of_copies, library_id: 0, category_id: book.category_id }
       response.should have_http_status(:not_found)
     end
 
     it 'should return http response unprocessable entity for invalid attributes' do
       book = create(:book)
-      put :update, id: book.id, book: { name: '', author: '', isbn: '', price: '', publication: '', version: '', no_of_copies: '', library_id: '', category_id: ''  }
+      put :update, id: book.id, book: { name: '', author: '', isbn: '', price: '', publication: '', version: '', no_of_copies: '', library_id: book.library_id, category_id: book.category_id  }
       response.should have_http_status(:unprocessable_entity)
     end
 

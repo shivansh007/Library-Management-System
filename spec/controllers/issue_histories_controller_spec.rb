@@ -41,7 +41,8 @@ RSpec.describe IssueHistoriesController, type: :controller do
     end
 
     it 'should return http response unprocessable entity for invalid attributes' do
-      post :create, issue_history: { issue_type: '', issue_date: '', return_date: '', member_id: '', book_id: '' }
+      issue_history = create(:issue_history)
+      post :create, issue_history: { issue_type: '', issue_date: '', return_date: '', member_id: issue_history.member_id, book_id: issue_history.book_id }
       response.should have_http_status(:unprocessable_entity)
     end
   end
@@ -55,19 +56,19 @@ RSpec.describe IssueHistoriesController, type: :controller do
 
     it 'should return http response not found if member not found' do
       issue_history = create(:issue_history)
-      put :update, issue_history: { issue_type: issue_history.issue_type, issue_date: issue_history.issue_date, return_date: issue_history.return_date, member_id: 0, book_id: issue_history.book_id }
+      put :update, id: issue_history.id, issue_history: { issue_type: issue_history.issue_type, issue_date: issue_history.issue_date, return_date: issue_history.return_date, member_id: 0, book_id: issue_history.book_id }
       response.should have_http_status(:not_found)
     end
 
     it 'should return http response not found if book not found' do
       issue_history = create(:issue_history)
-      put :update, issue_history: { issue_type: issue_history.issue_type, issue_date: issue_history.issue_date, return_date: issue_history.return_date, member_id: issue_history.member_id, book_id: 0 }
+      put :update, id: issue_history.id, issue_history: { issue_type: issue_history.issue_type, issue_date: issue_history.issue_date, return_date: issue_history.return_date, member_id: issue_history.member_id, book_id: 0 }
       response.should have_http_status(:not_found)
     end
 
     it 'should return http response unprocessable entity for invalid attributes' do
       issue_history = create(:issue_history)
-      put :update, id: issue_history.id, issue_history: { issue_type: '', issue_date: '', return_date: '', member_id: '', book_id: '' }
+      put :update, id: issue_history.id, issue_history: { issue_type: '', issue_date: '', return_date: '', member_id: issue_history.member_id, book_id: issue_history.book_id }
       response.should have_http_status(:unprocessable_entity)
     end
 

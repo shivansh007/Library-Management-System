@@ -35,7 +35,8 @@ RSpec.describe MembersController, type: :controller do
     end
 
     it 'should return http response unprocessable entity for invalid attributes' do
-      post :create, member: { name: '', address: '', phone: '', is_male: '', code: '', version: '', validity_date: '', library_id: '' }
+      member = create(:member)
+      post :create, member: { name: '', address: '', phone: '', is_male: '', code: '', version: '', validity_date: '', library_id: member.library_id }
       response.should have_http_status(:unprocessable_entity)
     end
   end
@@ -55,7 +56,7 @@ RSpec.describe MembersController, type: :controller do
 
     it 'should return http response unprocessable entity for invalid attributes' do
       member = create(:member)
-      put :update, id: member.id, member: { name: '', address: '', phone: '', is_male: '', code: '', version: '', validity_date: '', library_id: '' }
+      put :update, id: member.id, member: { name: '', address: '', phone: '', is_male: '', code: '', version: '', validity_date: '', library_id: member.library_id }
       response.should have_http_status(:unprocessable_entity)
     end
 
