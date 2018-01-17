@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :library do
-    name "MyString"
-    address "MyString"
-    phone "MyString"
+    name Faker::Company.name
+    address Faker::Address.street_address
+    phone Faker::PhoneNumber.cell_phone
   end
 end

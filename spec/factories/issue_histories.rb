@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :issue_history do
-    issue_type 1
-    issue_date "2018-01-17"
-    return_date "2018-01-17"
-    member nil
-    book nil
+    issue_type %w[rent return].sample
+    issue_date Faker::Date.between(2.days.ago, Date.today).strftime("%F")
+    return_date Faker::Date.between(2.days.ago, Date.today).strftime("%F")
+    member { Member.first || association(:member) }
+    book { Book.first || association(:book) }
   end
 end
