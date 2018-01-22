@@ -23,8 +23,7 @@ RSpec.describe CategoriesController, type: :controller do
 
   context 'POST create' do
     it 'should return http response ok' do
-      category = create(:category)
-      post :create, category: { name: category.name }
+      post :create, category: { name: 'Fiction' }
       response.should have_http_status(:ok)
     end
 

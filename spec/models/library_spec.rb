@@ -50,8 +50,9 @@ RSpec.describe Library, type: :model do
   context 'association' do
     it 'should have many books' do
       library = create(:library)
-      book1 = create(:book, library_id: library.id)
-      book2 = create(:book, library_id: library.id)
+      category = create(:category)
+      book1 = create(:book, library_id: library.id, category_id: category.id)
+      book2 = create(:book, library_id: library.id, category_id: category.id)
       library.books.includes(book1, book2).should be_truthy
     end
 

@@ -20,8 +20,9 @@ RSpec.describe Category, type: :model do
     context 'success' do
       it 'should have many books' do
         category = create(:category)
-        book1 = create(:book, category_id: category.id)
-        book2 = create(:book, category_id: category.id)
+        library = create(:library)
+        book1 = create(:book, category_id: category.id, library_id: library.id)
+        book2 = create(:book, category_id: category.id, library_id: library.id)
         category.books.includes(book1, book2).should be_truthy
       end
     end

@@ -7,6 +7,5 @@ FactoryGirl.define do
     code Faker::Code.asin
     validity_date Faker::Date.between(2.days.ago, Date.today).strftime("%F")
     is_author Faker::Boolean.boolean(1)
-    library { Library.first || association(:library) }
   end
 end

@@ -23,8 +23,7 @@ RSpec.describe LibrariesController, type: :controller do
 
   context 'POST create' do
     it 'should return http response ok' do
-      library = create(:library)
-      post :create, library: { name: library.name, address: library.address, phone: library.phone }
+      post :create, library: { name: 'Saraswati Library', address: 'Gulab Bagh, Udaipur', phone: '9523523519' }
       response.should have_http_status(:ok)
     end
 

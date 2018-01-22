@@ -7,7 +7,5 @@ FactoryGirl.define do
     publication Faker::Book.publisher
     version Faker::Number.between(1, 10)
     no_of_copies Faker::Number.between(1, 50)
-    library { Library.first || association(:library) }
-    category { Category.first || association(:category) }
   end
 end
