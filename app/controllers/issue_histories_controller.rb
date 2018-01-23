@@ -3,7 +3,10 @@ class IssueHistoriesController < ApplicationController
 
   def index
     @issue_histories = IssueHistory.all
-    render json: { message: 'All issue histories', issue_histories: @issue_histories }, status: :ok
+    respond_to do |format|
+      format.json { render json: { message: 'All issue histories', issue_histories: @issue_histories }, status: :ok }
+      format.html
+    end
   end
 
   def show

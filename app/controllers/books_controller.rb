@@ -3,7 +3,10 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    render json: { message: 'All books', books: @books }, status: :ok
+    respond_to do |format|
+      format.json { render json: { message: 'All books', books: @books }, status: :ok }
+      format.html
+    end
   end
 
   def show

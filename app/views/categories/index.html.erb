@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Categories</h1>
+    </header>
+    <div class="content">
+      <div id="template" hidden>
+        <div class="heading"><p id="name"></p></div>
+        <hr>
+        <center>
+          <p id="delete"></p>
+          <p id="edit"></p>
+        </center>
+      </div>
+    </div>
+    <center><button id="create_category" class="button add">Add Category</button></center>
+    <div class="add_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Add Category</h2></center>
+        </div>
+        <form method="POST" id="add_data">
+          <label for="category[name]">Name</label>
+          <input type="text" name="category[name]" placeholder="Name">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+    <div class="edit_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Edit Category</h2></center>
+        </div>
+        <form method="POST" id="edit_data">
+          <input type="hidden" name="category[id]" id="id">
+          <label for="category[name]">Name</label>
+          <input type="text" name="category[name]" id="name">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

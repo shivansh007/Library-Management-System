@@ -3,7 +3,10 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    render json: { message: 'All categories', categories: @categories }, status: :ok
+    respond_to do |format|
+      format.json { render json: { message: 'All categories', categories: @categories }, status: :ok }
+      format.html
+    end
   end
 
   def show

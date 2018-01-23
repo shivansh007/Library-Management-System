@@ -3,7 +3,10 @@ class LibrariesController < ApplicationController
 
   def index
     @libraries = Library.all
-    render json: { message: 'All libraries', libraries: @libraries }, status: :ok
+    respond_to do |format|
+      format.json { render json: { message: 'All libraries', libraries: @libraries }, status: :ok }
+      format.html
+    end
   end
 
   def show

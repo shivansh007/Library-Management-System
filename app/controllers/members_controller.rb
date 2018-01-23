@@ -3,7 +3,10 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.all
-    render json: { message: 'All members', members: @members }, status: :ok
+    respond_to do |format|
+      format.json { render json: { message: 'All members', members: @members }, status: :ok }
+      format.html
+    end
   end
 
   def show
