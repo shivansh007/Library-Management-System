@@ -1,6 +1,6 @@
 class Member < ActiveRecord::Base
   belongs_to :library
-  has_many :issue_histories
+  has_many :issue_histories, dependent: :destroy 
   validates :name, presence: true, length: { minimum: 2 }
   validates :address, presence: true, length: { minimum: 5 }
   validates :phone, presence: true, length: { minimum: 5, maximum: 15 }

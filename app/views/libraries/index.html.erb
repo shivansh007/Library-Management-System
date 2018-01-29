@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag    'library/index', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'library/index', 'data-turbolinks-track' => true %>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Library Management System</h1>
+    </header>
+    <div class="content">
+      <div id="template" hidden>
+        <div class="header"><p id="name"></p></div>
+        <hr>
+        <p id="address"><strong>Address : </strong></p>
+        <p id="phone">Phone : </p>
+        <p id="link"></p>
+        <center>
+          <p id="delete"></p>
+          <p id="edit"></p>
+        </center>
+      </div>
+    </div>
+    <center><button id="addData" class="button add">Add Library</button></center>
+    <div class="addForm modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Add Library</h2></center>
+        </div>
+        <form method="POST" id="add_data">
+          <label for="library[name]">Name</label>
+          <input type="text" name="library[name]" placeholder="Name">
+          <label for="library[address]">Address</label>
+          <input type="text" name="library[address]" placeholder="Address">
+          <label for="library[phone]">Phone</label>
+          <input type="text" name="library[phone]" placeholder="Phone">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+    <div class="editForm modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Edit Library</h2></center>
+        </div>
+        <form method="POST" id="edit_data">
+          <input type="hidden" name="library[id]" id="id">
+          <input type="text" name="library[name]" id="name">
+          <input type="text" name="library[address]" id="address" >
+          <input type="text" name="library[phone]" id="phone" >
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -9,6 +9,7 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simplecov'
+gem 'sprockets-rails', '3.2.1'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 group :development, :test do

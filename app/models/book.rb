@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :library
   belongs_to :category
-  has_many :issue_histories
+  has_many :issue_histories, dependent: :destroy 
   validates :name, presence: true
   validates :author, presence: true, length: { minimum: 2 }
   validates :isbn, presence: true
