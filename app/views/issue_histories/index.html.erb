@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Issue histories</h1>
+    </header>
+    <div class="content">
+      <div id="template" hidden>
+        <p id="member"><strong>Member : </strong></p>
+        <p id="book">Book : </p>
+        <p id="type">Type : </p>
+        <p id="issue_date">Issue Date : </p>
+        <p id="return_date">Return Date : </p>
+        <center>
+          <p id="delete"></p>
+          <p id="edit"></p>
+        </center>
+      </div>
+    </div>
+    <center><button id="create_issue_history" class="button add">Add Issue history</button></center>
+    <div class="add_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Add Issue history</h2></center>
+        </div>
+        <form method="POST" id="add_data">
+          <label for="issue_history[member_id]">Member ID</label>
+          <input type="number" name="issue_history[member_id]" placeholder="Member ID">
+          <label for="issue_history[book_id]">Book ID</label>
+          <input type="number" name="issue_history[book_id]" placeholder="Book ID">
+          <label for="issue_history[issue_type]">Type</label>
+          <input type="text" name="issue_history[issue_type]" placeholder="Type">
+          <label for="issue_history[issue_date]">Issue Date</label>
+          <input type="date" name="issue_history[issue_date]" placeholder="Issue Date">
+          <label for="issue_history[return_date]">Return Date</label>
+          <input type="date" name="issue_history[return_date]" placeholder="Return Date">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+    <div class="edit_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Edit Issue history</h2></center>
+        </div>
+        <form method="POST" id="edit_data">
+          <input type="hidden" name="issue_history[id]" id="id">
+          <label for="issue_history[member_id]">Member ID</label>
+          <input type="number" name="issue_history[member_id]" placeholder="Member ID" id="member_id">
+          <label for="issue_history[book_id]">Book ID</label>
+          <input type="number" name="issue_history[book_id]" placeholder="Book ID" id="book_id">
+          <label for="issue_history[issue_type]">Type</label>
+          <input type="text" name="issue_history[issue_type]" placeholder="Type" id="issue_type">
+          <label for="issue_history[issue_date]">Issue Date</label>
+          <input type="date" name="issue_history[issue_date]" placeholder="Issue Date" id="issue_date">
+          <label for="issue_history[return_date]">Return Date</label>
+          <input type="date" name="issue_history[return_date]" placeholder="Return Date" id="return_date">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

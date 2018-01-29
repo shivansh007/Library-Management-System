@@ -2,12 +2,17 @@
 <html>
 <head>
   <title>Library</title>
+<<<<<<< HEAD
   <%= stylesheet_link_tag    'library/index', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'library/index', 'data-turbolinks-track' => true %>
+=======
+  <%= javascript_include_tag 'library', 'data-turbolinks-track' => true %>
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
 </head>
 <body>
   <div class="container">
     <header class="header">
+<<<<<<< HEAD
       <h1>Library Management System</h1>
     </header>
     <div class="content">
@@ -17,14 +22,29 @@
         <p id="address"><strong>Address : </strong></p>
         <p id="phone">Phone : </p>
         <p id="link"></p>
+=======
+      <h1>Libraries</h1>
+    </header>
+    <div class="content">
+      <div id="template" hidden>
+        <div class="heading"><p id="name"></p></div>
+        <hr>
+        <p id="address"><strong>Address : </strong></p>
+        <p id="phone">Phone : </p>
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
         <center>
           <p id="delete"></p>
           <p id="edit"></p>
         </center>
       </div>
     </div>
+<<<<<<< HEAD
     <center><button id="addData" class="button add">Add Library</button></center>
     <div class="addForm modal">
+=======
+    <center><button id="create_library" class="button add">Add Library</button></center>
+    <div class="add_form modal">
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
       <div class="modal-content">
         <div class="modal-header">
           <span id="cross">&times;</span>
@@ -41,7 +61,11 @@
         </form>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="editForm modal">
+=======
+    <div class="edit_form modal">
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
       <div class="modal-content">
         <div class="modal-header">
           <span id="cross">&times;</span>
@@ -49,8 +73,16 @@
         </div>
         <form method="POST" id="edit_data">
           <input type="hidden" name="library[id]" id="id">
+<<<<<<< HEAD
           <input type="text" name="library[name]" id="name">
           <input type="text" name="library[address]" id="address" >
+=======
+          <label for="library[name]">Name</label>
+          <input type="text" name="library[name]" id="name">
+          <label for="library[address]">Address</label>
+          <input type="text" name="library[address]" id="address" >
+          <label for="library[phone]">Phone</label>
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
           <input type="text" name="library[phone]" id="phone" >
           <input type="submit" name="submit">
         </form>

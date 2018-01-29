@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Members</h1>
+    </header>
+    <div class="content">
+      <div id="template" hidden>
+        <div class="heading"><p id="name"></p></div>
+        <hr>
+        <p id="address"><strong>Author : </strong></p>
+        <p id="phone">Price : $</p>
+        <p id="gender">No. of copies : </p>
+        <p id="code">ISBN : </p>
+        <p id="validity_date">Publication : </p>
+        <p id="is_author">Version : </p>
+        <p id="library">Library : </p>
+        <center>
+          <p id="delete"></p>
+          <p id="edit"></p>
+        </center>
+      </div>
+    </div>
+    <center><button id="create_member" class="button add">Add Member</button></center>
+    <div class="add_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Add Member</h2></center>
+        </div>
+        <form method="POST" id="add_data">
+          <label for="member[name]">Name</label>
+          <input type="text" name="member[name]" placeholder="Name">
+          <label for="member[address]">Address</label>
+          <input type="text" name="member[author]" placeholder="Address">
+          <label for="member[phone]">Phone</label>
+          <input type="text" name="member[price]" placeholder="Phone">
+          <label for="member[is_male]">Gender</label>
+          <input type="text" name="member[is_male]" placeholder="Gender">
+          <label for="member[code]">Code</label>
+          <input type="text" name="member[code]" placeholder="Code">
+          <label for="member[validity_date]">Validity Date</label>
+          <input type="date" name="member[validity_date]" placeholder="Validity Date">
+          <label for="member[is_author]">Is author</label>
+          <input type="number" name="member[is_author]" placeholder="Is author">
+          <label for="member[library_id]">Library ID</label>
+          <input type="number" name="member[library_id]" placeholder="Library ID">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+    <div class="edit_form modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="cross">&times;</span>
+          <center><h2>Edit Library</h2></center>
+        </div>
+        <form method="POST" id="add_data">
+          <input type="hidden" name="member[id]" id="id">
+          <label for="member[name]">Name</label>
+          <input type="text" name="member[name]" placeholder="Name" id="name">
+          <label for="member[address]">Address</label>
+          <input type="text" name="member[author]" placeholder="Address" id="address">
+          <label for="member[phone]">Phone</label>
+          <input type="text" name="member[price]" placeholder="Phone" id="phone">
+          <label for="member[is_male]">Gender</label>
+          <input type="text" name="member[is_male]" placeholder="Gender" id="is_male">
+          <label for="member[code]">Code</label>
+          <input type="text" name="member[code]" placeholder="Code" id="code">
+          <label for="member[validity_date]">Validity Date</label>
+          <input type="date" name="member[validity_date]" placeholder="Validity Date" id="validity_date">
+          <label for="member[is_author]">Is author</label>
+          <input type="number" name="member[is_author]" placeholder="Is author" id="is_author">
+          <label for="member[library_id]">Library ID</label>
+          <input type="number" name="member[library_id]" placeholder="Library ID" id="library_id">
+          <input type="submit" name="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

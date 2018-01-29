@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/shivansh/development/TDD/library_management_system/app/helpers/application_helper.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/books_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/books_controller.rb": [
         1,
         1,
         null,
@@ -62,12 +62,12 @@
         null,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/application_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/categories_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/categories_controller.rb": [
         1,
         1,
         null,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/issue_histories_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/issue_histories_controller.rb": [
         1,
         1,
         null,
@@ -175,7 +175,7 @@
         null,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/libraries_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/libraries_controller.rb": [
         1,
         1,
         null,
@@ -226,7 +226,7 @@
         null,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/controllers/members_controller.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/controllers/members_controller.rb": [
         1,
         1,
         null,
@@ -281,7 +281,7 @@
         null,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/models/book.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/models/book.rb": [
         1,
         1,
         1,
@@ -297,25 +297,16 @@
         1,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/models/category.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/models/category.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/models/issue_history.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/models/issue_history.rb": [
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/shivansh/development/TDD/library_management_system/app/models/library.rb": [
         1,
         1,
         1,
@@ -324,7 +315,16 @@
         1,
         null
       ],
-      "/Users/shivansh/development/TDD/library_management_system/app/models/member.rb": [
+      "/Users/shivansh/development/Views/library_management_system/app/models/library.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/shivansh/development/Views/library_management_system/app/models/member.rb": [
         1,
         1,
         1,
@@ -339,6 +339,6 @@
         null
       ]
     },
-    "timestamp": 1516598325
+    "timestamp": 1516735043
   }
 }
