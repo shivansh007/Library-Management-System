@@ -12,12 +12,12 @@
 <script type="text/javascript">
 	$("document").ready(function()
 	{
+		$('.container').hide();
 		var books = new Book.all();
 		var categories = new Category.all();
 		var libraries = new Library.all();
 		var members = new Member.all();
 		var issue_histories = new IssueHistory.all();
-		$('.container').hide();
 		$('#show_books').click(function(){
 			$('.container').hide();
 			$('#books').show();
