@@ -116,7 +116,7 @@ Book.all.prototype = {
   },
   editBookFormAction:function(){
     $('#books .edit_form #edit_data').submit(function(d){
-      var id = $('.edit_form #edit_data').find('#id').val();
+      var id = $('#books .edit_form #edit_data').find('#id').val();
       d.preventDefault();
       $.ajax({
         type : 'PATCH',

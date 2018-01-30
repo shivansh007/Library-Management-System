@@ -1,9 +1,42 @@
-<h1>Hi</h1>
 <%= javascript_include_tag 'main_manifest', 'data-turbolinks-track' => true %>
+<button id="show_books">Books</button>
+<button id="show_categories">Categories</button>
+<button id="show_libraries">Libraries</button>
+<button id="show_members">Members</button>
+<button id="show_issue_histories">Issue Histories</button>
+<%= render :template => "libraries/index" %>
+<%= render :template => "categories/index" %>
 <%= render :template => "books/index" %>
+<%= render :template => "members/index" %>
+<%= render :template => "issue_histories/index" %>
 <script type="text/javascript">
-  $("document").ready(function()
-  {
-    var books = new Book.all();
-  })
+	$("document").ready(function()
+	{
+		var books = new Book.all();
+		var categories = new Category.all();
+		var libraries = new Library.all();
+		var members = new Member.all();
+		var issue_histories = new IssueHistory.all();
+		$('.container').hide();
+		$('#show_books').click(function(){
+			$('.container').hide();
+			$('#books').show();
+		});
+		$('#show_categories').click(function(){
+			$('.container').hide();
+			$('#categories').show();
+		});
+		$('#show_members').click(function(){
+			$('.container').hide();
+			$('#members').show();
+		});
+		$('#show_libraries').click(function(){
+			$('.container').hide();
+			$('#libraries').show();
+		});
+		$('#show_issue_histories').click(function(){
+			$('.container').hide();
+			$('#issue_histories').show();
+		});
+	})
 </script>
