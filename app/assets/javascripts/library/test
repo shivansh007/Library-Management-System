@@ -1,0 +1,74 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+  public static void main (String[] args) throws java.lang.Exception
+  {
+    int[] input = new int[]{1,2,3,2,3,4,5,3,4,2,2,3,4,5,6,7,8,1,2,4,5,6,7,8,9};
+    int m = 1, n = 0, k = 0, j = 0;
+    for(int i=1; i < input.length; i++)
+    {
+      if(input[i] <= input[i-1])
+      {
+        if(m>n)
+        {
+          n = m;
+          k = j;
+        }
+        m = 1;
+        j = i;
+      }
+      else
+        m++;
+    }
+    if(m>n)
+    { 
+      n = m;
+      k = j;
+    }
+    for(int i=k;i<k+n;i++)
+      System.out.print(input[i] + " ");
+  }
+}
+ /* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+  public static void main (String[] args) throws java.lang.Exception
+  {
+    int[] arrival_time = new int[]{1,5,9,25};
+    int[] job_size = new int[]{12,7,2,5};
+    int[][] mat = new int[arrival_time.length][5];
+    int wt = 0, st = 1, ft = job_size[0], m = 0;
+    for(int i=0;i<arrival_time.length;i++)
+    {
+      m = 0;
+      if(st < arrival_time[i])
+        st = arrival_time[i];
+      ft = st + job_size[i] - 1;
+      wt = st - arrival_time[i];
+      mat[i][m++] = i+1;
+      mat[i][m++] = arrival_time[i];
+      mat[i][m++] = wt;
+      mat[i][m++] =st;
+      mat[i][m++] =ft;
+      st = ft + 1;
+    }
+    for(int i=0;i<4;i++)
+    {
+      for(int j=0;j<5;j++)
+        System.out.print(mat[i][j] + " ");
+      System.out.println();
+    }
+  }
+}

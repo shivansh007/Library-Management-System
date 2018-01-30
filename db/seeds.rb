@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 5.times do
+<<<<<<< HEAD
+	Book.create({name: Faker::Book.title, author: Faker::Book.author, isbn: Faker::Code.isbn, price: Faker::Commerce.price, publication: Faker::Book.publisher, version: %w[I II III].sample, no_of_copies: Faker::Number.between(1, 10), library_id: 46, category_id: 1})
+=======
 	Library.create({
 		name: Faker::Company.name,
 		address: Faker::Address.street_address,
@@ -49,4 +52,5 @@ end
 		member_id: Faker::Number.between(1, 5),
 		book_id: Faker::Number.between(1, 5)
 		})
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
 end

@@ -3,17 +3,34 @@ class LibrariesController < ApplicationController
 
   def index
     @libraries = Library.all
+<<<<<<< HEAD
+    respond_to do |f|
+      f.json {render json: { message: 'All libraries', libraries: @libraries }, status: :ok}
+      f.html
+    end
+    # render json: { message: 'All libraries', libraries: @libraries }, status: :ok
+=======
     respond_to do |format|
       format.json { render json: { message: 'All libraries', libraries: @libraries }, status: :ok }
       format.html
     end
+>>>>>>> 83c5a1387049781162ab03d3217f695c5be4743d
   end
 
   def show
     @library = Library.find(params[:id])
-    render json: { message: 'Library loaded', library: @library }, status: :ok
-  rescue ActiveRecord::RecordNotFound
-    render json: { message: 'Not found' }, status: :not_found
+  #   render json: { message: 'Library loaded', library: @library }, status: :ok
+  # rescue ActiveRecord::RecordNotFound
+  #   render json: { message: 'Not found' }, status: :not_found
+    respond_to do |f|
+      f.json { render json: { message: 'Library loaded', library: @library }, status: :ok }
+      f.html
+    end
+    rescue ActiveRecord::RecordNotFound
+    respond_to do |f|
+      render json: { message: 'Not found' }, status: :not_found
+      f.html
+    end
   end
 
   def create
