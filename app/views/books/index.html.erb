@@ -1,91 +1,87 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Library</title>
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <h1>Books</h1>
-    </header>
-    <div class="content">
-      <div id="template" hidden>
-        <div class="heading"><p id="name"></p></div>
-        <hr>
-        <p id="author"><strong>Author : </strong></p>
-        <p id="price">Price : $</p>
-        <p id="copies">No. of copies : </p>
-        <p id="isbn">ISBN : </p>
-        <p id="publication">Publication : </p>
-        <p id="version">Version : </p>
-        <p id="category">Category : </p>
-        <p id="library">Library : </p>
-        <center>
-          <p id="delete"></p>
-          <p id="edit"></p>
-        </center>
-      </div>
-    </div>
-    <center><button id="create_book" class="button add">Add Book</button></center>
-    <div class="add_form modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span id="cross">&times;</span>
-          <center><h2>Add Book</h2></center>
-        </div>
-        <form method="POST" id="add_data">
-          <label for="book[name]">Name</label>
-          <input type="text" name="book[name]" placeholder="Name">
-          <label for="book[author]">Author</label>
-          <input type="text" name="book[author]" placeholder="Author">
-          <label for="book[price]">Price</label>
-          <input type="number" name="book[price]" placeholder="Price">
-          <label for="book[isbn]">ISBN</label>
-          <input type="text" name="book[isbn]" placeholder="ISBN">
-          <label for="book[publication]">Publication</label>
-          <input type="text" name="book[publication]" placeholder="Publication">
-          <label for="book[version]">Version</label>
-          <input type="text" name="book[version]" placeholder="Version">
-          <label for="book[no_of_copies]">No. of copies</label>
-          <input type="number" name="book[no_of_copies]" placeholder="No. of copies">
-          <label for="book[category_id]">Category ID</label>
-          <input type="number" name="book[category_id]" placeholder="Category ID">
-          <label for="book[library_id]">Library ID</label>
-          <input type="number" name="book[library_id]" placeholder="Library ID">
-          <input type="submit" name="submit">
-        </form>
-      </div>
-    </div>
-    <div class="edit_form modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span id="cross">&times;</span>
-          <center><h2>Edit Book</h2></center>
-        </div>
-        <form method="POST" id="edit_data">
-          <input type="hidden" name="book[id]" id="id">
-          <label for="book[name]">Name</label>
-          <input type="text" name="book[name]" placeholder="Name" id="name">
-          <label for="book[author]">Author</label>
-          <input type="text" name="book[author]" placeholder="Author" id="author">
-          <label for="book[price]">Price</label>
-          <input type="number" name="book[price]" placeholder="Price" id="price">
-          <label for="book[isbn]">ISBN</label>
-          <input type="text" name="book[isbn]" placeholder="ISBN" id="isbn">
-          <label for="book[publication]">Publication</label>
-          <input type="text" name="book[publication]" placeholder="Publication" id="publication">
-          <label for="book[version]">Version</label>
-          <input type="text" name="book[version]" placeholder="Version" id="version">
-          <label for="book[no_of_copies]">No. of copies</label>
-          <input type="number" name="book[no_of_copies]" placeholder="No. of copies" id="no_of_copies">
-          <label for="book[category_id]">Category ID</label>
-          <input type="number" name="book[category_id]" placeholder="Category ID" id="category_id">
-          <label for="book[library_id]">Library ID</label>
-          <input type="number" name="book[library_id]" placeholder="Library ID" id="library_id">
-          <input type="submit" name="submit">
-        </form>
-      </div>
+<div class="container" id="books">
+  <header class="header">
+    <h1>Books</h1>
+  </header>
+  <div class="content">
+    <div id="template" hidden>
+      <div class="heading"><p id="name"></p></div>
+      <hr>
+      <p id="author"><strong>Author : </strong></p>
+      <p id="price">Price : $</p>
+      <p id="copies">No. of copies : </p>
+      <p id="isbn">ISBN : </p>
+      <p id="publication">Publication : </p>
+      <p id="version">Version : </p>
+      <p id="category">Category : </p>
+      <p id="library">Library : </p>
+      <center>
+        <p id="delete"></p>
+        <p id="edit"></p>
+      </center>
     </div>
   </div>
-</body>
-</html>
+  <center><button id="create_book" class="button add">Add Book</button></center>
+  <div class="add_form modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="cross">&times;</span>
+        <center><h2>Add Book</h2></center>
+      </div>
+      <form method="POST" id="add_data">
+        <label for="book[name]">Name</label>
+        <input type="text" name="book[name]" placeholder="Name">
+        <label for="book[author]">Author</label>
+        <input type="text" name="book[author]" placeholder="Author">
+        <label for="book[price]">Price</label>
+        <input type="number" name="book[price]" placeholder="Price">
+        <label for="book[isbn]">ISBN</label>
+        <input type="text" name="book[isbn]" placeholder="ISBN">
+        <label for="book[publication]">Publication</label>
+        <input type="text" name="book[publication]" placeholder="Publication">
+        <label for="book[version]">Version</label>
+        <input type="text" name="book[version]" placeholder="Version">
+        <label for="book[no_of_copies]">No. of copies</label>
+        <input type="number" name="book[no_of_copies]" placeholder="No. of copies">
+        <label for="book[category_id]">Category</label>
+        <select name="book[category_id]" placeholder="Category" id="category_id">
+        </select>
+        <label for="book[library_id]">Library</label>
+        <select name="book[library_id]" placeholder="Library" id="library_id">
+        </select>
+        <input type="submit" name="submit">
+      </form>
+    </div>
+  </div>
+  <div class="edit_form modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="cross">&times;</span>
+        <center><h2>Edit Book</h2></center>
+      </div>
+      <form method="POST" id="edit_data">
+        <input type="hidden" name="book[id]" id="id">
+        <label for="book[name]">Name</label>
+        <input type="text" name="book[name]" placeholder="Name" id="name">
+        <label for="book[author]">Author</label>
+        <input type="text" name="book[author]" placeholder="Author" id="author">
+        <label for="book[price]">Price</label>
+        <input type="number" name="book[price]" placeholder="Price" id="price">
+        <label for="book[isbn]">ISBN</label>
+        <input type="text" name="book[isbn]" placeholder="ISBN" id="isbn">
+        <label for="book[publication]">Publication</label>
+        <input type="text" name="book[publication]" placeholder="Publication" id="publication">
+        <label for="book[version]">Version</label>
+        <input type="text" name="book[version]" placeholder="Version" id="version">
+        <label for="book[no_of_copies]">No. of copies</label>
+        <input type="number" name="book[no_of_copies]" placeholder="No. of copies" id="no_of_copies">
+        <label for="book[category_id]">Category</label>
+        <select name="book[category_id]" placeholder="Category" id="category_id">
+        </select>
+        <label for="book[library_id]">Library</label>
+        <select name="book[library_id]" placeholder="Library" id="library_id">
+        </select>
+        <input type="submit" name="submit">
+      </form>
+    </div>
+  </div>
+</div>

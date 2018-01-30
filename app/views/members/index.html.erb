@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Library</title>
+  <%= javascript_include_tag 'member', 'data-turbolinks-track' => true %>
 </head>
 <body>
   <div class="container">
@@ -12,12 +13,12 @@
       <div id="template" hidden>
         <div class="heading"><p id="name"></p></div>
         <hr>
-        <p id="address"><strong>Author : </strong></p>
-        <p id="phone">Price : $</p>
-        <p id="gender">No. of copies : </p>
-        <p id="code">ISBN : </p>
-        <p id="validity_date">Publication : </p>
-        <p id="is_author">Version : </p>
+        <p id="address"><strong>Address : </strong></p>
+        <p id="phone">Phone : </p>
+        <p id="gender">Gender : </p>
+        <p id="code">Code : </p>
+        <p id="validity_date">Validity Date : </p>
+        <p id="is_author">Is author : </p>
         <p id="library">Library : </p>
         <center>
           <p id="delete"></p>
@@ -47,8 +48,9 @@
           <input type="date" name="member[validity_date]" placeholder="Validity Date">
           <label for="member[is_author]">Is author</label>
           <input type="number" name="member[is_author]" placeholder="Is author">
-          <label for="member[library_id]">Library ID</label>
-          <input type="number" name="member[library_id]" placeholder="Library ID">
+          <label for="member[library_id]">Library</label>
+          <select name="member[library_id]" id="library_id">
+          </select>
           <input type="submit" name="submit">
         </form>
       </div>
@@ -59,7 +61,7 @@
           <span id="cross">&times;</span>
           <center><h2>Edit Library</h2></center>
         </div>
-        <form method="POST" id="add_data">
+        <form method="POST" id="edit_data">
           <input type="hidden" name="member[id]" id="id">
           <label for="member[name]">Name</label>
           <input type="text" name="member[name]" placeholder="Name" id="name">
@@ -74,9 +76,10 @@
           <label for="member[validity_date]">Validity Date</label>
           <input type="date" name="member[validity_date]" placeholder="Validity Date" id="validity_date">
           <label for="member[is_author]">Is author</label>
-          <input type="number" name="member[is_author]" placeholder="Is author" id="is_author">
-          <label for="member[library_id]">Library ID</label>
-          <input type="number" name="member[library_id]" placeholder="Library ID" id="library_id">
+          <input type="text" name="member[is_author]" placeholder="Is author" id="is_author">
+          <label for="member[library_id]">Library</label>
+          <select name="member[library_id]" id="library_id">
+          </select>
           <input type="submit" name="submit">
         </form>
       </div>
